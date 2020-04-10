@@ -6,6 +6,8 @@ const forecast = require('./utils/forecast')
 
 const app = express()
 
+const port = process.env.PORT || 3000
+
 // define paths for express config 
 const publicDirPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../templates/views')
@@ -92,10 +94,8 @@ app.get('*', (req, res) => {
     })
 })
 
-
-
 //start the server - this is a dev port - for http website it's port 80 - urlis localhost:3000
 
-app.listen(3000, () => {
-    console.log('server started')
+app.listen(port, () => {
+    console.log('server started' + port)
 })
